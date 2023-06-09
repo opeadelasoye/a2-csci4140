@@ -1,4 +1,5 @@
 <?php
+    ini_set('display_errors', 0);
     require_once "includes/db.php";
     require_once "includes/functions.php";
     
@@ -37,7 +38,7 @@
         add_line_to_order_075($_SESSION["currentOrder"], $_GET['part-num'], $_GET['quantity']);
 
         echo '<form method="POST" action="index.php"> <input type="submit" value = "Back to Homepage"/></form>';
-        echo '<form method="POST" action="orderinfo.php"> <input type="submit" value = "Done with order"/></form>';
+        echo '<form method="POST" action="index.php"> <input type="submit" value = "Done with order"/></form>';
     }else{
         echo("Invalid PO/Client/Part number");
         echo '<form method="POST" action="submitorder.php"> <input type="submit" value = "Restart order"/></form>';

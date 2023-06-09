@@ -15,7 +15,11 @@
 
 <body>
 <?php
-    order_info_075($_SESSION["currentOrder"]);
+    if($_SESSION["currentOrder"] == null){
+        order_info_075($_SESSION["currentOrder"]);
+    }else{
+        order_info_075($_GET["po-num"]);
+    }
     echo '<form method="POST" action="index.php"> <input type="submit" value = "Back to Homepage"/></form>';
 ?>
 </body>
